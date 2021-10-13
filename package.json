@@ -1,10 +1,11 @@
 {
-  "name": "electron-learning",
+  "name": "electron-text-editor",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Primitive text editor using Electron",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "electron .",
+    "forge": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },

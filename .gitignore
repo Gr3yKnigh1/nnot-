@@ -1,4 +1,5 @@
-# NPM
+# npm
 node_modules/
 
+# electron forge
 out/
