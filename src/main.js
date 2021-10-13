@@ -1,6 +1,6 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
-require("electron-reload")(__dirname)
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+require("electron-reload")(__dirname);
 
 
 function createWindow () {
@@ -10,19 +10,19 @@ function createWindow () {
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js')
 		}
-	})
+	});
 
-	win.loadFile('index.html')
+	win.loadFile('index.html');
 }
 
 app.whenReady().then(() => {
-	createWindow()
+	createWindow();
 
 	app.on('activate', function () {
 		if (BrowserWindow.getAllWindows().length === 0) createWindow()
-	})
-})
+	});
+});
 
 app.on('window-all-closed', function () {
 	if (process.platform !== 'darwin') app.quit()
-})
+});
