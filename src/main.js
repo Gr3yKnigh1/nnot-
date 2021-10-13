@@ -1,7 +1,6 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, dialog, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 require("electron-reload")(__dirname);
-
 
 const template = [
 	{
@@ -10,7 +9,11 @@ const template = [
 			{
 				label: "Open File",
 				click: async () => {
-					console.log("File was opened");
+					const { filePaths } = await dialog.showOpenDialog({ 
+						properties: ['openFile'] 
+					});
+					const file = filePaths[0];
+					console.log(file);
 				}
 			}
 		]
@@ -42,5 +45,5 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', function () {
-	if (process.platform !== 'darwin') app.quit()
+	if (process.platform !== 'darwin') app.quit();
 });
