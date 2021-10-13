@@ -3,3 +3,6 @@ node_modules/
 
 # electron forge
 out/
+
+# Inno Setup
+**/Output/
